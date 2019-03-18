@@ -1,5 +1,4 @@
-// Step One: checkJs.
-// @ts-check
+// Step Two: typescript as a superset.
 
 function area(shape) {
     switch (shape.kind) {
@@ -26,7 +25,7 @@ displayArea({ kind: 'circle', radius: 2_000 });
 // displayArea(1, 2, 3, 4);
 
 // invalid invocations #1.5
-displayArea();
+// displayArea();
 
 // invalid invocations #2
 displayArea(displayArea);
