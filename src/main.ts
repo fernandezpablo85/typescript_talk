@@ -1,7 +1,7 @@
-// Step Three: typescript with actual types.
+// Step Four: typescript with string literals.
 
 type Shape = {
-    kind: string,
+    kind: 'circle' | 'square' | 'rectangle',
     side?: number,
     height?: number,
     width?: number,
@@ -45,7 +45,7 @@ displayArea({ kind: 'rectangle', side: 10, height: 20 });
 displayArea({ kind: 'square', height: 10, width: 10 });
 
 // invalid invocations #4
-displayArea({ kind: 'cicrle', radius: 10 });
-displayArea({ kind: 'triangle', height: 10, width: 15 });
+// displayArea({ kind: 'cicrle', radius: 10 });
+// displayArea({ kind: 'triangle', height: 10, width: 15 });
 
 console.info('success 🙌');
