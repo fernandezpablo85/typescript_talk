@@ -1,12 +1,22 @@
-// Step Four: typescript with string literals.
+// Step Five: typescript union types.
 
-type Shape = {
-    kind: 'circle' | 'square' | 'rectangle',
-    side?: number,
-    height?: number,
-    width?: number,
-    radius?: number,
+type Circle = {
+    kind: 'circle',
+    radius: number
 }
+
+type Square = {
+    kind: 'square',
+    side: number,
+}
+
+type Rectangle = {
+    kind: 'rectangle',
+    width: number,
+    height: number,
+}
+
+type Shape = Circle | Square | Rectangle
 
 function area(shape: Shape) {
     switch (shape.kind) {
@@ -41,8 +51,8 @@ displayArea({ kind: 'circle', radius: 2_000 });
 // displayArea({ kind: 'rectangle', width: 10, heigth: 20 });
 
 // invalid invocations #3
-displayArea({ kind: 'rectangle', side: 10, height: 20 });
-displayArea({ kind: 'square', height: 10, width: 10 });
+// displayArea({ kind: 'rectangle', side: 10, height: 20 });
+// displayArea({ kind: 'square', height: 10, width: 10 });
 
 // invalid invocations #4
 // displayArea({ kind: 'cicrle', radius: 10 });
