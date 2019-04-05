@@ -1,4 +1,4 @@
-// Step Five: typescript union types.
+// Encore: extension to new types.
 
 type Circle = {
     kind: 'circle',
@@ -16,13 +16,20 @@ type Rectangle = {
     height: number,
 }
 
-type Shape = Circle | Square | Rectangle
+type Triangle = {
+    kind: 'triangle',
+    width: number,
+    height: number,
+}
+
+type Shape = Circle | Square | Rectangle | Triangle
 
 function area(shape: Shape) {
     switch (shape.kind) {
         case 'circle': return Math.PI * Math.pow(shape.radius, 2);
         case 'square': return shape.side * shape.side;
         case 'rectangle': return shape.height * shape.width;
+        case 'triangle': return (shape.height * shape.width) / 2;
     }
 }
 
@@ -56,6 +63,8 @@ displayArea({ kind: 'circle', radius: 2_000 });
 
 // invalid invocations #4
 // displayArea({ kind: 'cicrle', radius: 10 });
-// displayArea({ kind: 'triangle', height: 10, width: 15 });
+// 
+
+displayArea({ kind: 'triangle', height: 10, width: 15 });
 
 console.info('success 🙌');
