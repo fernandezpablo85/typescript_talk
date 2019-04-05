@@ -1,6 +1,14 @@
-// Step Two: typescript as a superset.
+// Step Three: typescript with actual types.
 
-function area(shape) {
+type Shape = {
+    kind: string,
+    side?: number,
+    height?: number,
+    width?: number,
+    radius?: number,
+}
+
+function area(shape: Shape) {
     switch (shape.kind) {
         case 'circle': return Math.PI * Math.pow(shape.radius, 2);
         case 'square': return shape.side * shape.side;
@@ -8,7 +16,7 @@ function area(shape) {
     }
 }
 
-function displayArea(shape) {
+function displayArea(shape: Shape) {
     const a = area(shape);
     const rounded = Math.round(a * 100) / 100; // round to two decimals
     console.log(`area of ${shape.kind}: ${rounded}`);
@@ -28,9 +36,9 @@ displayArea({ kind: 'circle', radius: 2_000 });
 // displayArea();
 
 // invalid invocations #2
-displayArea(displayArea);
-displayArea(1);
-displayArea({ kind: 'rectangle', width: 10, heigth: 20 });
+// displayArea(displayArea);
+// displayArea(1);
+// displayArea({ kind: 'rectangle', width: 10, heigth: 20 });
 
 // invalid invocations #3
 displayArea({ kind: 'rectangle', side: 10, height: 20 });
