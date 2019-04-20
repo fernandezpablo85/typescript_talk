@@ -31,7 +31,11 @@
 		}
 
 		.blood {
-			color: #a23;
+			color: #a23 !important;
+		}
+
+		.gray {
+			color: darkgray !important;
 		}
 
 		.gold {
@@ -450,7 +454,7 @@
 					</div>
 					<div>
 						<img class="custom_image" src="./images/impossible.transition.svg">
-						<h4>Impossible</h4>
+						<h4 class="blood">Impossible</h4>
 					</div>
 				</div>
 			</section>
@@ -472,27 +476,98 @@
 
 			<section>
 				<h2>Backend Errors</h2>
+				<h5 class="gray">Ux</h5>
 				<img src="images/backend.fails.png">
 			</section>
 
 			<section>
 				<h2>Frontend Errors</h2>
+				<h5 class="gray">Ux</h5>
+				<img src="images/template_error.png" height="450px">
 			</section>
 
 			<section>
-				<h2>Backend Stacktraces</h2>
+				<h2>Frontend Errors</h2>
+				<h5 class="gray">Ux</h5>
+				<img src="images/eternal_spinner.png" height="450px">
 			</section>
 
 			<section>
-				<h2>Frontend Stacktraces</h2>
+				<h2>Frontend Errors</h2>
+				<h5 class="gray">Ux</h5>
+				<img src="images/done_with_errors.png" height="450px">
 			</section>
 
 			<section>
-				<h2>Backend Logs</h2>
+				<h2>Backend Errors</h2>
+				<h5 class="gray">Stack Traces</h5>
+				<img src="images/java.stacktrace.png" height="450px">
+				<aside class="notes">
+					<ul>
+						<li>Casi con seguridad presente en un log</li>
+					</ul>
+				</aside>
 			</section>
 
 			<section>
-				<h2>Frontend Logs</h2>
+				<h2>Frontend Errors</h2>
+				<h5 class="gray">Stack Traces</h5>
+				<img src="images/js.stacktrace.png" height="450px">
+				<aside class="notes">
+					<ul>
+						<li>Ocurre en el device del usuario</li>
+						<li>Se puede shipear con window.onError (pero hay ciertos issues con los CDN)</li>
+						<li>Por lo general minificada. Requiere sourcemaps.</li>
+						<li>El modelo asincrono y de callbacks dificulta la lectura (hooks, promesas que se resuelven,
+							código de framework)</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h2>Backend Errors</h2>
+				<h5 class="gray">Logs <small>(& Other telemetry tools)</small></h5>
+				<ul>
+					<li>They Exist. On your servers.</li>
+					<li>3rd party libraries logs in most languages (java, python, others)</li>
+					<li>Log severity (debug, info, warn, error) configurable at runtime</li>
+					<li>syslog, dmesg, tcpdump, etc. on the running machine</li>
+					<li>online diagnostic tools: perf, strace, jvisualvm</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Frontend Errors</h2>
+				<h5 class="gray">Logs <small>(& Other telemetry tools)</small></h5>
+				<ul>
+					<li>They (usually) don't exist. If they do, they're on the user console</li>
+					<li>Need to ship them back for analysis (window.onError, 3rd party tools)</li>
+					<li>You may also ship additional relevant info (user-agent, screen resolution, etc)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Avoiding Frontend Errors</h3>
+				<h4 class="gray">We need tools</h4>
+				<img class="custom_image large" src="images/tools_for_checking_js.svg">
+			</section>
+
+			<section>
+				<h3>Avoiding Frontend Errors</h3>
+				<h4 class="gray">We need tools</h4>
+				<img class="custom_image large" src="images/eslint.svg">
+			</section>
+
+			<section>
+				<h3>Avoiding Frontend Errors</h3>
+				<h4 class="gray">We need tools</h4>
+				<img class="custom_image large" src="images/ts.svg">
+			</section>
+
+			<section>
+				<h3>Avoiding Frontend Errors</h3>
+				<h4 class="gray">We need tools</h4>
+				<img class="custom_image large" src="images/ts2.svg">
 			</section>
 
 			<section>
