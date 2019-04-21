@@ -59,6 +59,22 @@
 		img.custom_image.large {
 			width: 500px;
 		}
+
+		section table.center tr td {
+			text-align: center;
+		}
+
+		section table.center tr td:first-child {
+			text-align: left;
+		}
+
+		pre span.blue {
+			color: deepskyblue;
+		}
+
+		pre span.pink {
+			color: palevioletred;
+		}
 	</style>
 
 </head>
@@ -498,7 +514,7 @@
 				<img src="images/done_with_errors.png" height="450px">
 			</section>
 
-			<section>
+			<!-- <section>
 				<h2>Backend Errors</h2>
 				<h5 class="gray">Stack Traces</h5>
 				<img src="images/java.stacktrace.png" height="450px">
@@ -522,30 +538,78 @@
 							código de framework)</li>
 					</ul>
 				</aside>
-			</section>
+			</section> -->
 
 			<!-- merge with up -->
 
 			<section>
-				<h2>Backend Errors</h2>
-				<h5 class="gray">Logs <small>(& Other telemetry tools)</small></h5>
-				<ul>
-					<li>They Exist. On your servers.</li>
-					<li>3rd party libraries logs in most languages (java, python, others)</li>
-					<li>Log severity (debug, info, warn, error) configurable at runtime</li>
-					<li>syslog, dmesg, tcpdump, etc. on the running machine</li>
-					<li>online diagnostic tools: perf, strace, jvisualvm</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>Frontend Errors</h2>
-				<h5 class="gray">Logs <small>(& Other telemetry tools)</small></h5>
-				<ul>
-					<li>They (usually) don't exist. If they do, they're on the user console</li>
-					<li>Need to ship them back for analysis (window.onError, 3rd party tools)</li>
-					<li>You may also ship additional relevant info (user-agent, screen resolution, etc)</li>
-				</ul>
+				<h2>Diagnostics</h2>
+				<table class="center">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Backend</th>
+							<th>Frontend</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Stack Traces</td>
+							<td>😀</td>
+							<td>🤔</td>
+						</tr>
+						<tr class="fragment">
+							<td>Logs</td>
+							<td>😀</td>
+							<td>🤔</td>
+						</tr>
+						<tr class="fragment">
+							<td>Environment</td>
+							<td>😀</td>
+							<td>😭</td>
+						</tr>
+						<tr class="fragment">
+							<td>Diagnostic Tools</td>
+							<td>😀</td>
+							<td>😭</td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+					<h4>Stack traces</h4>
+					<ul>
+						<li>Backend, presentes en los logs casi con seguridad</li>
+						<li>Frontend, ocurren en el usuario, se pueden enviar al back window.onError</li>
+						<li>Frontend, si el script se hostea en CDN hay que configrar headers de allow-origin</li>
+						<li>Frontend, motivo del asincronismo (hooks de fwk, promesas, async/await) a veces no son muy
+							claras</li>
+						<li>Frontend, muy probablemente estén minificadas y tengan que traducirse con source maps</li>
+					</ul>
+					<h4>Logs</h4>
+					<ul>
+						<li>Backend, casi siempre hay. Práctica madura, con niveles de severidad, appenders, etc. Hot
+							reload de severity level</li>
+						<li>Frontend, casi nunca hay. Prácica ad-hoc.</li>
+						<li>Frontend, se puede usar un buffer circular en console.log y enviar en el onErro (mismos
+							issues que con las stack traces)</li>
+						<li>Backend, muy común tener logs de las dependencias</li>
+						<li>Frontend, practicamente imposible (salvo vendoring)</li>
+					</ul>
+					<h4>Environment</h4>
+					<ul>
+						<li>Backend, la app corre en un entorno controlado a veces posible de replicar con mucha
+							exactitud de manera local(VM, docker, etc)</li>
+						<li>Frontend, la app corre en el navegador del usuario, cualquiera sea, con las extensiones y
+							restricciones que apliquen. (media queries - netbook)</li>
+					</ul>
+					<h4>Diagnostic Tools</h4>
+					<ul>
+						<li>Backend, muchas tools para diagnosticar la app (profiling, pyflames, jvisualvm, flight
+							recorder, etc). Además herramientas de diagnóstico de la máquina que corre el programa (top,
+							vmstat, perf, strace, etc)</li>
+						<li>Frontend, nada que se le compare</li>
+					</ul>
+				</aside>
 			</section>
 
 			<section>
@@ -573,21 +637,31 @@
 			</section>
 
 			<section>
+				<h3>TypeScript</h3>
 				<ul>
-					<li>Whats an illegal state?</li>
-					<li>Data Illegal State / Invariants / Person-Constructor example</li>
-					<li>Function illegal State / Range / Domain</li>
-					<li>Illegal states lead to errors</li>
-					<li>Good way: fail fast, at the earliest state transition</li>
-					<li>Best way: make state unrepresentable = no transition </li>
+					<li>OpenSourced by Microsoft on 2012</li>
+					<li class="fragment">Anders Hejlsberg (C#, Delphi, Turbo Pascal)</li>
+					<li class="fragment">Excellent support on VsCode</li>
+					<li class="fragment">JavaScript superset - Gradual Typing</li>
+					<li class="fragment">Union Types - Control Flow Analysis
+						<pre>let x: <span class="blue">string[]</span> | <span class="pink">undefined</span>
+
+...
+
+if (x !== undefined) {
+	<span class="blue">
+	x.map(it => it.toUpperCase())
+	</span>
+} else {
+	<span class="pink">// x is of type undefined</span>
+}
+						</pre>
+					</li>
+
 				</ul>
 			</section>
-			<section>
-				<h2>
-					<span class="light">MAKING</span>
-					<span class="blood">JAVASCRIPT</span>
-					<span class="light">ILLEGAL STATES UNREPRESENTABLE</span>
-				</h2>
+			<section data-background="./images/noideadog.jpg">
+				<h1 style="color: #e63f3f">Live Demo Time</h1>
 			</section>
 			<section>
 				<h2>
