@@ -91,7 +91,7 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h2>MAKING JAVASCRIPT ILLEGAL STATES UNREPRESENTABLE</h2>
+				<h2>HACIENDO QUE LOS ESTADOS INVALIDOS (DE JAVASCRIPT) SEAN IMPOSIBLES DE REPRESENTAR</h2>
 				<aside class="notes">
 					<ul>
 						<li>Yaron Minski: haciendo que los estados ilegales sean imposibles de representar</li>
@@ -100,11 +100,8 @@
 
 			</section>
 			<section>
-				<h2>
-					<span class="light">MAKING JAVASCRIPT</span>
-					<span class="blood">ILLEGAL STATES</span>
-					<span class="light">UNREPRESENTABLE</span>
-				</h2>
+				<h2>HACIENDO QUE LOS <span class="blood">ESTADOS INVALIDOS</span> (DE JAVASCRIPT) SEAN IMPOSIBLES DE
+					REPRESENTAR</h2>
 				<aside class="notes">
 					<ul>
 						<li>una combinación de datos e instrucciones del programa que va a terminar en un
@@ -115,13 +112,12 @@
 
 			</section>
 			<section>
-				<h3>programs as state machines</h3>
+				<h3>UN PROGRAMA COMO UNA MÁQUINA DE ESTADOS</h3>
 				<img class="custom_image large" src="./images/states.svg">
-
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre>
 					<code class="scala"  data-trim data-line-numbers="1">
 							case class Person(fname: String, lname: String)
@@ -146,7 +142,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre>
 						<code class="scala"  data-trim data-line-numbers="3,4">
 							case class Person(fname: String, lname: String)
@@ -171,7 +167,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre>
 							<code class="scala"  data-trim data-line-numbers="6,7">
 								case class Person(fname: String, lname: String)
@@ -196,7 +192,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre>
 								<code class="scala"  data-trim data-line-numbers="9,10">
 									case class Person(fname: String, lname: String)
@@ -221,7 +217,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="javascript" data-line-numbers="1-7">
 						function add(a, b) { 
 							return a + b;
@@ -247,7 +243,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="javascript" data-line-numbers="1-3, 9">
 						function add(a, b) { 
 							return a + b;
@@ -273,7 +269,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="javascript" data-line-numbers="1-3, 11, 13">
 							function add(a, b) { 
 								return a + b;
@@ -299,7 +295,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="python" data-line-numbers="1-3, 4, 6">
 						def add(a, b):
 							return a + b
@@ -324,7 +320,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="python" data-line-numbers="8, 10, 12">
 							def add(a, b):
 								return a + b
@@ -349,7 +345,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="java" data-line-numbers="1-3, 5">
 						public static Integer add(Integer a, Integer b) {
 							return a + b;
@@ -376,7 +372,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="java" data-line-numbers="7, 9, 11, 13">
 							public static Integer add(Integer a, Integer b) {
 								return a + b;
@@ -403,7 +399,7 @@
 			</section>
 
 			<section>
-				<h3>Invariants</h3>
+				<h3>Invariantes</h3>
 				<pre><code  data-trim class="java" data-line-numbers="15">
 								public static Integer add(Integer a, Integer b) {
 									return a + b;
@@ -430,94 +426,89 @@
 			</section>
 
 			<section>
-				<h3>Invalid State Transitions</h3>
+				<h3>Transiciones Inválidas</h3>
 				<div style="display: flex">
 					<div>
 						<img class="custom_image" src="./images/long.invalid.transition.svg">
-						<h4>Latent</h4>
+						<h4>Latente</h4>
 					</div>
 					<div class="hide">
 						<img class="custom_image" src="./images/invalid.immediate.svg">
-						<h4>Immediate</h4>
+						<h4>Inmediata</h4>
 					</div>
 					<div class="hide">
 						<img class="custom_image" src="./images/impossible.transition.svg">
-						<h4>Impossible</h4>
+						<h4>Imposible</h4>
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<h3>Invalid State Transitions</h3>
+				<h3>Transiciones Inválidas</h3>
 				<div style="display: flex">
 					<div>
 						<img class="custom_image" src="./images/long.invalid.transition.svg">
-						<h4>Latent</h4>
+						<h4>Latente</h4>
 					</div>
 					<div>
 						<img class="custom_image" src="./images/invalid.immediate.svg">
-						<h4>Immediate</h4>
+						<h4>Inmediata</h4>
 					</div>
 					<div class="hide">
 						<img class="custom_image" src="./images/impossible.transition.svg">
-						<h4>Impossible</h4>
+						<h4>Imposible</h4>
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<h3>Invalid State Transitions</h3>
+				<h3>Transiciones Inválidas</h3>
 				<div style="display: flex">
 					<div>
 						<img class="custom_image" src="./images/long.invalid.transition.svg">
-						<h4>Latent</h4>
+						<h4>Latente</h4>
 					</div>
 					<div>
 						<img class="custom_image" src="./images/invalid.immediate.svg">
-						<h4>Immediate</h4>
+						<h4>Inmediata</h4>
 					</div>
 					<div>
 						<img class="custom_image" src="./images/impossible.transition.svg">
-						<h4 class="blood">Impossible</h4>
+						<h4 class="blood">Imposible</h4>
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<h2>
-					<span class="light">MAKING JAVASCRIPT ILLEGAL STATES</span>
-					<span class="blood">UNREPRESENTABLE</span>
-				</h2>
+				<h2>HACIENDO QUE LOS ESTADOS INVALIDOS (DE JAVASCRIPT) SEAN <span class="blood">IMPOSIBLES DE
+						REPRESENTAR</span> </h2>
 			</section>
 
 			<section>
-				<h2>
-					<span class="light">MAKING</span>
-					<span class="gold">JAVASCRIPT</span>
-					<span class="light">ILLEGAL STATES UNREPRESENTABLE</span>
-				</h2>
+				<h2>HACIENDO QUE LOS ESTADOS INVALIDOS (DE <span class="gold">JAVASCRIPT</span>) SEAN IMPOSIBLES DE
+					REPRESENTAR</h2>
 			</section>
 
 			<section>
-				<h2>Backend Errors</h2>
+				<h2>Errores de Back</h2>
 				<h5 class="gray">Ux</h5>
 				<img src="images/backend.fails.png">
 			</section>
 
 			<section>
-				<h2>Frontend Errors</h2>
+				<h2>Errores de Front</h2>
 				<h5 class="gray">Ux</h5>
 				<img src="images/template_error.png" height="450px">
 			</section>
 
 			<section>
-				<h2>Frontend Errors</h2>
+				<h2>Errores de Front</h2>
 				<h5 class="gray">Ux</h5>
 				<img src="images/eternal_spinner.png" height="450px">
 			</section>
 
 			<section>
-				<h2>Frontend Errors</h2>
+				<h2>Errores de Front</h2>
 				<h5 class="gray">Ux</h5>
 				<img src="images/done_with_errors.png" height="450px">
 			</section>
@@ -551,7 +542,7 @@
 			<!-- merge with up -->
 
 			<section>
-				<h2>Diagnostics</h2>
+				<h2>Diagnóstico <small>(post)</small></h2>
 				<table class="center">
 					<thead>
 						<tr>
@@ -621,82 +612,67 @@
 			</section>
 
 			<section>
-				<h3>Invalid State Transitions</h3>
+				<h3>Transiciones Inválidas</h3>
 				<div style="display: flex">
 					<div style="opacity: 0.3">
 						<img class="custom_image" src="./images/long.invalid.transition.svg">
-						<h4>Latent</h4>
+						<h4>Latente</h4>
 					</div>
 					<div style="opacity: 0.3">
 						<img class="custom_image" src="./images/invalid.immediate.svg">
-						<h4>Immediate</h4>
+						<h4>Inmediata</h4>
 					</div>
 					<div style="border: 1px solid gold;">
 						<img class="custom_image" src="./images/impossible.transition.svg">
-						<h4 style="color: gold">Impossible</h4>
+						<h4 style="color: gold">Imposible</h4>
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<h3>Avoiding Frontend Errors</h3>
-				<h4 class="gray">We need tools</h4>
+				<h3>Previniendo errores</h3>
+				<h4 class="gray">necesitamos herramientas</h4>
 				<img class="custom_image large" src="images/tools_for_checking_js.svg">
 			</section>
 
 			<section>
-				<h3>Avoiding Frontend Errors</h3>
-				<h4 class="gray">We need tools</h4>
+				<h3>Previniendo errores</h3>
+				<h4 class="gray">necesitamos herramientas</h4>
 				<img class="custom_image large" src="images/eslint.svg">
 			</section>
 
 			<section>
-				<h3>Avoiding Frontend Errors</h3>
-				<h4 class="gray">We need tools</h4>
+				<h3>Previniendo errores</h3>
+				<h4 class="gray">necesitamos herramientas</h4>
 				<img class="custom_image large" src="images/ts.svg">
 			</section>
 
 			<section>
-				<h3>Avoiding Frontend Errors</h3>
-				<h4 class="gray">We need tools</h4>
+				<h3>Previniendo errores</h3>
+				<h4 class="gray">necesitamos herramientas</h4>
 				<img class="custom_image large" src="images/ts2.svg">
 			</section>
 
 			<section>
 				<h3>TypeScript</h3>
 				<ul>
-					<li>OpenSourced by Microsoft on 2012</li>
+					<li>Microsoft - 2012</li>
 					<li class="fragment">Anders Hejlsberg (C#, Delphi, Turbo Pascal)</li>
-					<li class="fragment">Excellent support on VsCode</li>
-					<li class="fragment">JavaScript superset - Gradual Typing</li>
-					<li class="fragment">Powerful type system</li>
-					<!-- <li class="fragment">Union Types - Control Flow Analysis
-						<pre>let x: <span class="blue">string[]</span> | <span class="pink">undefined</span>
-
-...
-
-if (x !== undefined) {
-	<span class="blue">
-	x.map(it => it.toUpperCase())
-	</span>
-} else {
-	<span class="pink">// x is of type undefined</span>
-}
-						</pre>
-					</li> -->
-
+					<li class="fragment">Muy buen soporte en VsCode</li>
+					<li class="fragment">Superset de JavaScript - Gradual Typing</li>
+					<li class="fragment">Tipado fuerte</li>
 				</ul>
 			</section>
 			<section>
-				<h3>Live Demo</h3>
-				<h4 class="gray">Gradual typing towards only valid states</h4>
+				<h3>Demo</h3>
+				<h4 class="gray">Agregando tipos gradualmente hasta eliminar transiciones inválidas</h4>
 				<img class="custom_image large" style="margin-top: 100px; width:800px"
 					src="images/live.coding.summary.svg">
 			</section>
 
 			<section data-background="./images/noideadog.jpg">
-				<h1 style="color: #e63f3f">Live Demo Time</h1>
-				<aside>
+				<h1 style="color: #e63f3f">Demo</h1>
+				<aside class="notes">
 					<a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#string-literal-types">
 						String Literal Types
 					</a>
@@ -718,24 +694,24 @@ if (x !== undefined) {
 			<section data-background="./images/scales.png"></section>
 
 			<section>
-				<h2>Anecdotal Evidence</h2>
+				<h3>Evidencia Anecdótica</h3>
 				<ul>
 					<li>Omnia Salud - EHR. 2014</li>
-					<li class="fragment">2 developers</li>
+					<li class="fragment">2 devs</li>
 					<li class="fragment">~70k LOC JavaScript / ~15k LOC Scala</li>
-					<li class="fragment">90% of bugs were <span class="pink">JavaScript errors</span></li>
-					<li class="fragment">User bug reports / mail on window.onError</li>
-					<li class="fragment"><span class="blue">TypeScript 1.X (no strict mode)</span></li>
-					<li class="fragment">Migrated all ~70k LOC to TypeScript</li>
-					<li class="fragment">One function at a time</li>
-					<li class="fragment"><span class="pink">No more frontend errors</span></li>
+					<li class="fragment">90% de los bugs -> <span class="pink"> errores de JavaScript</span></li>
+					<li class="fragment">Enviemos los errores por mail en window.onError</li>
+					<li class="fragment"><span class="blue">TypeScript 1.X (sin strict mode)</span></li>
+					<li class="fragment">Migramos ~70k LOC a TypeScript</li>
+					<li class="fragment">De a una función a la vez</li>
+					<li class="fragment"><span class="pink">No más errores de front</span></li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Empirical Evidence</h2>
-				<h6>What is the percentage of <span style="color: gold">public</span> bugs that are detectable under
-					Flow or
+				<h2>Evidencia Empírica</h2>
+				<h6>Cuál es el porcentaje de bugs <span style="color: gold">public</span> que son detectables con
+					Flow o
 					TypeScript?
 				</h6>
 				<h6>(2017)</h6>
@@ -743,34 +719,34 @@ if (x !== undefined) {
 			</section>
 
 			<section>
-				<h2>Empirical Evidence</h2>
-				<h6>Look for "Fix" candidates</h6>
+				<h2>Evidencia Empírica</h2>
+				<h6>Buscar "fixes"</h6>
 				<img src="images/extract.fixes.png">
 			</section>
 
 			<section>
-				<h2>Empirical Evidence</h2>
-				<h6>Methodology</h6>
+				<h2>Evidencia Empírica</h2>
+				<h6>Metodología</h6>
 				<img class="fragment" src="images/gao.methodology.gif">
 			</section>
 
 			<section>
-				<h2>Empirical Evidence</h2>
-				<h6>Findings</h6>
+				<h2>Evidencia Empírica</h2>
+				<h6>Hallazgos</h6>
 				<ul>
-					<li>4M fixes on JavaScript code (19/08/2015)</li>
-					<li class="fragment">Sample: 400 fixes (95% / 5%)</li>
-					<li class="fragment">Time budget for fix: 10 minutes</li>
-					<li class="fragment"><span class="blue">60 bugs</span> detected just by adding types <span
+					<li>4M de fixes en código JavaScript (19/08/2015)</li>
+					<li class="fragment">Muestra: 400 fixes (95% / 5%)</li>
+					<li class="fragment">Tiempo para lograr el fix: 10 min</li>
+					<li class="fragment"><span class="blue">60 bugs</span> detectados sólo agregando tipos <span
 							class="blue">(15%)</span></li>
-					<li class="fragment">Underestimation: public bugs, authors are not experts, TS 2.0</li>
+					<li class="fragment">Subestimado: bugs públicos, los autores no son expertos, TS 2.0</li>
 					<li class="fragment">Token Tax: <span class="blue">2.5 tokens</span></li>
 					<li class="fragment">Time Tax: <span class="blue">4 mins</span></li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>References</h2>
+				<h2>Referencias</h2>
 				<ul>
 					<li><a href="https://danluu.com/empirical-pl">Static vs Dynamic typing review - Dan Luu</li>
 					<li><a href="http://ttendency.cs.ucl.ac.uk/projects/type_study/documents/type_study.pdf">To Type or
@@ -786,17 +762,17 @@ if (x !== undefined) {
 			</section>
 
 			<section>
-				<h2>Thanks!</h2>
+				<h2>Gracias!</h2>
 			</section>
 
 			<section>
-				<h2>Contact</h2>
+				<h2>Contacto</h2>
 				<img height="100" src="images/twlogo.png">
 				<h4><span class="blue">@fernandezpablo</span></h4>
 			</section>
 
 			<section>
-				<h2>Contact</h2>
+				<h2>Contacto</h2>
 				<img class="custom_image" src="images/despegar.jpg">
 				<h5>pablo.fernandez@despegar.com</h5>
 			</section>
