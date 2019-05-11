@@ -1,0 +1,7 @@
+type Shape = {
+    kind: string,
+    side: number,
+    radius: number,
+    width: number,
+    height: number,
+}
