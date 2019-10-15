@@ -7,8 +7,8 @@ function area(shape) {
 }
 
 function displayArea(shape) {
-    const a = area(shape);
-    const rounded = Math.round(a * 100) / 100; // round to two decimals
+    const shapeArea = area(shape);
+    const rounded = Math.round(shapeArea * 100) / 100; // round to two decimals
     console.log(`area of ${shape.kind}: ${rounded}`);
 }
 
