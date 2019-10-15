@@ -47,10 +47,10 @@ displayArea({ kind: 'rectangle', side: 10, height: 20 });
 displayArea({ kind: 'square', height: 10, width: 10 });
 
 /*
-    Extra - Support 'triangle' shapes
+    Extra - Support 'triangle's
 */
 
-// displayArea({ kind: 'triangle', height: 10, width: 15 });
+// displayArea({ kind: 'triangle', height: 10, base: 15 });
 
 
 /*
